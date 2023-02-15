@@ -1,0 +1,14 @@
+server:
+  port: ${VIEW_SERVICE_PORT:8080}
+
+spring.mvc.view.prefix: /WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
+
+user.service.host: ${USER_SERVICE_HOST:localhost}
+user.service.port: ${USER_SERVICE_PORT:8081}
+user.service.path: ${USER_SERVICE_PATH:/api/v1/users}
+
+quote.service.host: ${QUOTE_SERVICE_HOST:localhost}
+quote.service.port: ${QUOTE_SERVICE_PORT:8082}
+quote.service.path: ${QUOTE_SERVICE_PATH:/api/v1/quotes}
+

@@ -1,0 +1,43 @@
+version: '3.3'
+services:
+  user-service:
+    container_name: kameleoon_user_service
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    image: kameleoon_user_service:v1
+    ports:
+      - 8081:8081
+    env_file:
+      - environment.env
+    networks:
+      - backend
+
+  quote-service:
+    container_name: kameleoon_quote_service
+    build:
+      context: ./QuoteService
+      dockerfile: Dockerfile
+    image: kameleoon_quote_service:v1
+    ports:
+      - 8082:8082
+    env_file:
+      - environment.env
+    networks:
+      - backend
+
+  view-service:
+    container_name: kameleoon_view_service
+    build:
+      context: ./ViewService
+      dockerfile: Dockerfile
+    image: kameleoon_view_service:v1
+    ports:
+      - 8080:8080
+    env_file:
+      - environment.env
+    networks:
+      - backend
+
+networks:
+  backend:
